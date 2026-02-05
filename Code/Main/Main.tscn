@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b43n0f8g2tfgg"]
+[gd_scene load_steps=5 format=3 uid="uid://b43n0f8g2tfgg"]
 
-[ext_resource type="Script" uid="uid://cgke8bpq05cbs" path="res://Main/Main.gd" id="1"]
+[ext_resource type="Script" uid="uid://cj582qclfsovn" path="res://ScreenWrapper/ScreenWrapper.gd" id="1_ps1la"]
+[ext_resource type="PackedScene" uid="uid://oebbjqmgu783" path="res://Rock/Rock.tscn" id="2_83ytx"]
+[ext_resource type="PackedScene" uid="uid://b8ad7rm5rafq1" path="res://Ship/Ship.tscn" id="3_amygn"]
+[ext_resource type="PackedScene" uid="uid://d35cnk55p54q7" path="res://Bullet/Bullet.tscn" id="4_ps1la"]
 
 [node name="Main" type="Node"]
-script = ExtResource("1")
+script = ExtResource("1_ps1la")
+
+[node name="Rock" parent="." instance=ExtResource("2_83ytx")]
+
+[node name="Ship" parent="." instance=ExtResource("3_amygn")]
+position = Vector2(571, 363)
+
+[node name="Bullet" parent="." instance=ExtResource("4_ps1la")]

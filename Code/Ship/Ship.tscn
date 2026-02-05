@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8ad7rm5rafq1"]
+
+[ext_resource type="Script" uid="uid://bbntiilg5wj5w" path="res://Ship/ship.gd" id="1_11244"]
+
+[node name="Ship" type="Node2D"]
+script = ExtResource("1_11244")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-3, -33, -33, 77, 0, 47, 35, 71)
+
+[node name="flame" type="Polygon2D" parent="."]
