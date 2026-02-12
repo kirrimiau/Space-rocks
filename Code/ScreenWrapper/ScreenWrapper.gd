@@ -1,11 +1,14 @@
-extends Node2D
+extends Area2D
 class_name ScreenWrapper
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if position.x > get_viewport().size.x:
+		position.x = 0
+	elif position.x < 0:
+		position.x = get_viewport().size.x
+		
+	if position.y > get_viewport().size.y:
+		position.y = 0
+	elif position.y < 0:
+		position.y = get_viewport().size.x

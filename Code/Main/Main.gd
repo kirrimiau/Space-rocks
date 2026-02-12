@@ -1,5 +1,5 @@
-extends Node2D
-class_name ScreenWrapper
+extends ScreenWrapper
+class_name Main
 
 @onready var ship: Ship = $Ship
 

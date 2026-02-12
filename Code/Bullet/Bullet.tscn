@@ -2,10 +2,17 @@
 
 [ext_resource type="Script" uid="uid://wb1p3d0gfk82" path="res://Bullet/bullet.gd" id="1_qratc"]
 
-[node name="Bullet" type="Node2D"]
+[node name="Bullet" type="Area2D"]
 script = ExtResource("1_qratc")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(24, 15.999999)
+position = Vector2(1, -9.536743e-07)
 scale = Vector2(1.1542857, 1.2857144)
 polygon = PackedVector2Array(-1, -7, -7, -5, -8, 2, -4, 7, 2, 7, 6, 4, 7, -2, 5, -5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-7, -6, 0, -9, 6, -7, 9, -2, 8, 5, 3, 10, -4, 9, -9, 3)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.2999999999999998
+autostart = true

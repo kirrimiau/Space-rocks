@@ -13,10 +13,12 @@ func _ready() -> void:
 	flame.hide()
 
 func _process(delta: float) -> void:
+	super._process(delta)
+	
 	if Input.is_action_pressed("turn_ccw"):
 		rotation_degrees -= turn_speed * delta
 	if Input.is_action_pressed("turn_cw"):
-		rotation_degrees -= turn_speed * delta
+		rotation_degrees += turn_speed * delta
 
 	if Input.is_action_pressed("thrust"):
 		var direction = Vector2(sin(rotation), -cos(rotation))
@@ -27,12 +29,16 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("thrust"):
 			flame.hide()
 
+
 # spawn bullet, pos, reparent
 	if Input.is_action_just_pressed("fire"):
 		var bullet: Bullet = BULLET.instantiate()
 		bullet.position = self.position #self refers to the class ship
 		bullet.rotation = self.rotation
 		self.get_parent().add_child(bullet)
-		print("fire")
+		print("bullet fired")
 
 	position += velocity * delta
+
+func destroy():
+	queue_free()
